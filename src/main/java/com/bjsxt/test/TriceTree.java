@@ -62,11 +62,7 @@ public class TriceTree {
         triceTree.insert("worcao");
         triceTree.delete("worcao");
         System.out.println(triceTree.constains("worcao"));
-//        triceTree.insert("we");
-        //  triceTree.insert("wsj");
-        // triceTree.insert("jaxk");
 
-        //System.out.println(triceTree.constains("jax"));
 
 
     }
