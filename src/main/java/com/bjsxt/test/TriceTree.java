@@ -35,11 +35,18 @@ public class TriceTree {
     }
 
     public void delete(String str) {
-    Node pt = rt;
-//        for (int i = 0; i < str.length(); i++) {
-//            char tp = str.charAt(i);
-//             if(tp)
-//        }
+        Node pt = rt;
+        for (int i = 0; i < str.length(); i++) {
+            char tps = str.charAt(i);
+            if(pt.children.containsKey(tps)){
+                pt=pt.children.get(tps);
+                if(pt.children.entrySet().size()>1){
+                    pt.children.remove(str.charAt(i+1));
+                    break;
+                }
+            }
+
+        }
     }
 
 
@@ -49,10 +56,12 @@ public class TriceTree {
     }
 
     public static void main(String[] args) {
-        String str = "wol";
+
         TriceTree triceTree = new TriceTree();
-        triceTree.insert(str);
-        triceTree.insert("wwe");
+        triceTree.insert("world");
+        triceTree.insert("worcao");
+        triceTree.delete("worcao");
+        System.out.println(triceTree.constains("worcao"));
 //        triceTree.insert("we");
         //  triceTree.insert("wsj");
         // triceTree.insert("jaxk");
